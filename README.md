@@ -72,7 +72,9 @@ Semaphore is a means of synchronization, used to control access to a shared reso
     1) Wait: Decrements the semaphore value by one. If the value becomes negative, then the flow executing the wait operation blocks and waits until the semaphore value will not become positive.
     2) Signal: Increments the semaphore value by one. If there are threads that wait on a semaphore, then one of them is unlocked and can continue its execution.
 
-An example of using a semaphore would be a situation where we have a limited number of resources (such as printing devices) and multiple threads that want to access these resources. A semaphore can be used to limit the number of threads that can print simultaneously to avoid contention or resource overload. Example: https://pastebin.com/9iUHJQaL
+An example of using a semaphore would be a situation where we have a limited number of resources (such as printing devices) and multiple threads that want to access these resources. A semaphore can be used to limit the number of threads that can print simultaneously to avoid contention or resource overload. 
+
+    Example: https://pastebin.com/9iUHJQaL
 
 Combining all the knowledge we have gained, we will write a queue with a fixed size : https://pastebin.com/vAJkW644
 
