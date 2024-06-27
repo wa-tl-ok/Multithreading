@@ -74,9 +74,11 @@ Semaphore is a means of synchronization, used to control access to a shared reso
 
 An example of using a semaphore would be a situation where we have a limited number of resources (such as printing devices) and multiple threads that want to access these resources. A semaphore can be used to limit the number of threads that can print simultaneously to avoid contention or resource overload. 
 
-    Example: https://pastebin.com/9iUHJQaL
+    Code : https://pastebin.com/9iUHJQaL
 
-Combining all the knowledge we have gained, we will write a queue with a fixed size : https://pastebin.com/vAJkW644
+Combining all the knowledge we have gained, we will write a queue with a fixed size
+
+    Code : https://pastebin.com/vAJkW644
 
 
 Let's talk about std::future and std::promise : they are components of the C++ standard library designed to exchange values or exceptions between threads.
