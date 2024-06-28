@@ -32,11 +32,6 @@ Examples of synchronization mechanisms in C++:
         c) std::lock_guard is a class from the C++ standard library, which provides an automatic locking mechanism and unlocking the mutex (std::mutex). It serves to provide secure access to shared data in a multi-threaded environment.
             c') When a std::lock_guard instance is instantiated, a mutex is passed in that should be locked.
             c'') When leaving the scope of std::lock_guard, such as when a function or block of code terminates, the std::lock_guard destructor automatically unlocks the mutex using a call to unlock().
-
-    Examples:
-    https://pastebin.com/DyZALmKe - std::mutex - lock; unlock;
-    https://pastebin.com/DQhwR6A2 - std::shared_mutex - lock; unlock;
-    https://pastebin.com/cxG5SFie - std::lock_guard - lock; unlock;
     
     2) Condition variables (std::condition_variable): used for synchronization between threads when one thread is waiting for a certain event to occur in another thread.
     Condition variable is a means synchronization, which allows threads to wait for a certain conditions before continuing execution. Condition variable allows threads to communicate by signaling each other state of shared data or events.
@@ -50,9 +45,6 @@ Examples of synchronization mechanisms in C++:
     3) Atomic operations (std::atomic): Used to provide atomic reading and writing of data, which prevents race conditions.
     std::atomic support atomic read and write operations, as well as other operations such as exchange (swap), compare and exchange (compare-swap), addition (fetch_add), subtraction (fetch_sub), increase (fetch_inc), decrease (fetch_dec), return the current value of an atomic variable (load), write a new value to an atomic variable (store).
     std::memory_order_relaxed mode provides the lowest degree of synchronization and is used when the order of operations is not important.
-    
-    Examples:
-    https://pastebin.com/ig2Gtde0 - std::atomic;
 
 
 A deadlock is a situation where two or more threads communicate with each other and block while waiting for resources that other threads are holding. As a result, none of the threads can continue their work, and the program ends up in a closed state.
@@ -74,18 +66,11 @@ Semaphore is a means of synchronization, used to control access to a shared reso
 
 An example of using a semaphore would be a situation where we have a limited number of resources (such as printing devices) and multiple threads that want to access these resources. A semaphore can be used to limit the number of threads that can print simultaneously to avoid contention or resource overload. 
 
-    Code : https://pastebin.com/9iUHJQaL
-
-Combining all the knowledge we have gained, we will write a queue with a fixed size
-
-    Code : https://pastebin.com/vAJkW644
-
 
 Let's talk about std::future and std::promise : they are components of the C++ standard library designed to exchange values or exceptions between threads.
 
     std::promise is used to set a value or exception that can be obtained in the future using std::future.
     std::future is an object that is associated with std::promise and allows you to get the value or exception that was set in std::promise.
-    https://pastebin.com/K2BcLfB9 - std::future and std::promise
 
 A thread pool is a mechanism in which a group of threads is created and maintained that can perform tasks asynchronously. A thread pool allows you to reuse threads to process multiple tasks, instead of creating and terminating threads for each individual task.
 
